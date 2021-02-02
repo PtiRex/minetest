@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_5iOtMGVXEeuc6-s8HawskA" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_JIeXYGVaEeuJJ5E94TCkHw" name="setting" visibility="public">
+    <ownedAttribute xmi:id="_0_CugGVaEeuJJ5E94TCkHw" name="writeLines"/>
+    <ownedAttribute xmi:id="_8EREwGVaEeuJJ5E94TCkHw" name="parseConfigLines"/>
+    <ownedAttribute xmi:id="_-gDxwGVaEeuJJ5E94TCkHw" name="parseCommandLine"/>
+    <ownedAttribute xmi:id="_CV4z0GVbEeuJJ5E94TCkHw" name="updateConfigFile"/>
+    <ownedAttribute xmi:id="_CwSQ0GVbEeuJJ5E94TCkHw" name="readConfigFile"/>
+    <ownedOperation xmi:id="_DWYngGVbEeuJJ5E94TCkHw" name="checkNameValid">
+      <ownedParameter xmi:id="_Qj81AGVbEeuJJ5E94TCkHw" name="const std::string &amp;name"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_DmLXAGVbEeuJJ5E94TCkHw" name="checkValueValid">
+      <ownedParameter xmi:id="_Z2MccGVbEeuJJ5E94TCkHw" name="const std::string &amp;value"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_DyTugGVbEeuJJ5E94TCkHw" name="parseConfigObject">
+      <ownedParameter xmi:id="_fbAI0GVbEeuJJ5E94TCkHw" name="const std::string &amp;line"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EAk0AGVbEeuJJ5E94TCkHw" name="printEntry">
+      <ownedParameter xmi:id="_jf_oQGVbEeuJJ5E94TCkHw" name="std::ostream &amp;os, const std::string &amp;name"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_os05gGVbEeuJJ5E94TCkHw" name="server" visibility="public">
+    <ownedAttribute xmi:id="_r_6a4GVbEeuJJ5E94TCkHw" name="isTimerRunning"/>
+    <ownedAttribute xmi:id="_sD90cGVbEeuJJ5E94TCkHw" name="trigger"/>
+    <ownedAttribute xmi:id="_sH2O4GVbEeuJJ5E94TCkHw" name="tick"/>
+    <ownedAttribute xmi:id="_sLNE4GVbEeuJJ5E94TCkHw" name="getShutdownTimerMessage"/>
+    <ownedAttribute xmi:id="_sPP3YGVbEeuJJ5E94TCkHw" name="reset"/>
+    <ownedOperation xmi:id="_si5MIGVbEeuJJ5E94TCkHw" name="SendChatMessage">
+      <ownedParameter xmi:id="_7XIcgGVbEeuJJ5E94TCkHw" name="session_t peer_id, const ChatMessage &amp;message"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_swVLMGVbEeuJJ5E94TCkHw" name="SendTimeOfDay">
+      <ownedParameter xmi:id="_BhfF8GVcEeuJJ5E94TCkHw" name="session_t peer_id, u16 time, f32 time_speed"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ExgaUGVeEeuJJ5E94TCkHw" name="map" visibility="public">
+    <ownedAttribute xmi:id="_F4w9UGVeEeuJJ5E94TCkHw" name="setContent"/>
+    <ownedAttribute xmi:id="_F7zqQGVeEeuJJ5E94TCkHw" name="setParam1"/>
+    <ownedAttribute xmi:id="_GBwhQGVeEeuJJ5E94TCkHw" name="setParam2"/>
+    <ownedAttribute xmi:id="_d7iZ0GVeEeuJJ5E94TCkHw" name="getNodeBoxes"/>
+    <ownedAttribute xmi:id="_fqPXUGVeEeuJJ5E94TCkHw" name="getSelectionBoxes"/>
+    <ownedOperation xmi:id="_MMjPkGVeEeuJJ5E94TCkHw" name="isLightDayNightEq">
+      <ownedParameter xmi:id="_NHJPkGVeEeuJJ5E94TCkHw" name="const NodeDefManager *nodemgr"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_McLnAGVeEeuJJ5E94TCkHw" name="getLightBanks">
+      <ownedParameter xmi:id="_UOBLoGVeEeuJJ5E94TCkHw" name="u8 &amp;lightday, u8 &amp;lightnight"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7ROhcGVeEeuJJ5E94TCkHw" memberEnd="_7ROhcWVeEeuJJ5E94TCkHw _7RPIgWVeEeuJJ5E94TCkHw" navigableOwnedEnd="_7ROhcWVeEeuJJ5E94TCkHw _7RPIgWVeEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_7ROhcWVeEeuJJ5E94TCkHw" name="servers" type="_os05gGVbEeuJJ5E94TCkHw" association="_7ROhcGVeEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7ROhcmVeEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7RPIgGVeEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_7RPIgWVeEeuJJ5E94TCkHw" name="maps" type="_ExgaUGVeEeuJJ5E94TCkHw" association="_7ROhcGVeEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7RPIgmVeEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7RPIg2VeEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ARy4UGVfEeuJJ5E94TCkHw" name="string" visibility="public">
+    <ownedAttribute xmi:id="_CQTMYGVfEeuJJ5E94TCkHw" name="parseColorString"/>
+    <ownedAttribute xmi:id="_CT89UGVfEeuJJ5E94TCkHw" name="str_equal"/>
+    <ownedAttribute xmi:id="_CXARUGVfEeuJJ5E94TCkHw" name="str_starts_with"/>
+    <ownedOperation xmi:id="_Cmh7EGVfEeuJJ5E94TCkHw" name="str_starts_with">
+      <ownedParameter xmi:id="_VPASEGVfEeuJJ5E94TCkHw" name="str, std::basic_string&lt;T>(prefix)"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_CySfIGVfEeuJJ5E94TCkHw" name="str_ends_with">
+      <ownedParameter xmi:id="_YnnMoGVfEeuJJ5E94TCkHw" name="const std::basic_string&lt;T> &amp;str"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_g3PggGVfEeuJJ5E94TCkHw" memberEnd="_g3PggWVfEeuJJ5E94TCkHw _g3PghGVfEeuJJ5E94TCkHw" navigableOwnedEnd="_g3PggWVfEeuJJ5E94TCkHw _g3PghGVfEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_g3PggWVfEeuJJ5E94TCkHw" name="strings" type="_ARy4UGVfEeuJJ5E94TCkHw" association="_g3PggGVfEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g3PggmVfEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g3Pgg2VfEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_g3PghGVfEeuJJ5E94TCkHw" name="settings" type="_JIeXYGVaEeuJJ5E94TCkHw" association="_g3PggGVfEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g3PghWVfEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g3PghmVfEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jUTY0GVfEeuJJ5E94TCkHw" name="inventory" visibility="public">
+    <ownedAttribute xmi:id="_uXtb4GVfEeuJJ5E94TCkHw" name="serialize"/>
+    <ownedAttribute xmi:id="_ub5YUGVfEeuJJ5E94TCkHw" name="deSerialize"/>
+    <ownedAttribute xmi:id="_ufL84GVfEeuJJ5E94TCkHw" name="clearItems"/>
+    <ownedAttribute xmi:id="_0nyS0GVfEeuJJ5E94TCkHw" name="setSize"/>
+    <ownedAttribute xmi:id="_0tvJ0GVfEeuJJ5E94TCkHw" name="setWidth"/>
+    <ownedOperation xmi:id="_3o7voGVfEeuJJ5E94TCkHw" name="isKnown">
+      <ownedParameter xmi:id="_6hyzIGVfEeuJJ5E94TCkHw" name="IItemDefManager *itemdef"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_5qohoGVfEeuJJ5E94TCkHw" name="addWear">
+      <ownedParameter xmi:id="__35VIGVfEeuJJ5E94TCkHw" name="s32 amount, IItemDefManager *itemdef"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_53TEoGVfEeuJJ5E94TCkHw" name="deleteList">
+      <ownedParameter xmi:id="_t1K6EGVgEeuJJ5E94TCkHw" name="const std::string &amp;name"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sLLS4GVfEeuJJ5E94TCkHw" name="item def" visibility="public">
+    <ownedAttribute xmi:id="_4AmzUGVgEeuJJ5E94TCkHw" name="IWritableItemDefManager"/>
+    <ownedAttribute xmi:id="_4OHD0GVgEeuJJ5E94TCkHw" name="ItemDefinition&amp;"/>
+    <ownedAttribute xmi:id="_4Pj1UGVgEeuJJ5E94TCkHw" name="string"/>
+    <ownedOperation xmi:id="_J9BVkGVhEeuJJ5E94TCkHw" name="serialize">
+      <ownedParameter xmi:id="_PZiooGVhEeuJJ5E94TCkHw" name="std::ostream &amp;os, u16 protocol_version"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KMNBEGVhEeuJJ5E94TCkHw" name="deSerialize">
+      <ownedParameter xmi:id="_SyqgkGVhEeuJJ5E94TCkHw" name="std::istream &amp;is"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3ikzgGVgEeuJJ5E94TCkHw" memberEnd="_3ikzgWVgEeuJJ5E94TCkHw _3ikzhGVgEeuJJ5E94TCkHw" navigableOwnedEnd="_3ikzgWVgEeuJJ5E94TCkHw _3ikzhGVgEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_3ikzgWVgEeuJJ5E94TCkHw" name="inventorys" type="_jUTY0GVfEeuJJ5E94TCkHw" association="_3ikzgGVgEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ikzgmVgEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ikzg2VgEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_3ikzhGVgEeuJJ5E94TCkHw" name="item defs" type="_sLLS4GVfEeuJJ5E94TCkHw" association="_3ikzgGVgEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ikzhWVgEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ikzhmVgEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uj4kwGVhEeuJJ5E94TCkHw" name="craftdef" visibility="public">
+    <ownedAttribute xmi:id="_BNHwwGViEeuJJ5E94TCkHw" name="getOutput"/>
+    <ownedAttribute xmi:id="_BTrrwGViEeuJJ5E94TCkHw" name="getInput"/>
+    <ownedAttribute xmi:id="_BVN80GViEeuJJ5E94TCkHw" name="decrementInput"/>
+    <ownedOperation xmi:id="_FH4WIGViEeuJJ5E94TCkHw" name="cooktime">
+      <ownedParameter xmi:id="_MPbnoGViEeuJJ5E94TCkHw" name="CraftReplacements replacements"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_FUKeoGViEeuJJ5E94TCkHw" name="hash_inited">
+      <ownedParameter xmi:id="_RZjjIGViEeuJJ5E94TCkHw" name="CraftReplacements replacements"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Upzy8GViEeuJJ5E94TCkHw" memberEnd="_Upzy8WViEeuJJ5E94TCkHw _Upzy9GViEeuJJ5E94TCkHw" navigableOwnedEnd="_Upzy8WViEeuJJ5E94TCkHw _Upzy9GViEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_Upzy8WViEeuJJ5E94TCkHw" name="inventorys" type="_jUTY0GVfEeuJJ5E94TCkHw" association="_Upzy8GViEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Upzy8mViEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Upzy82ViEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Upzy9GViEeuJJ5E94TCkHw" name="craftdefs" type="_uj4kwGVhEeuJJ5E94TCkHw" association="_Upzy8GViEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Upzy9WViEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Upzy9mViEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YYrRYGViEeuJJ5E94TCkHw" name="gamedef" visibility="public">
+    <ownedAttribute xmi:id="_HtuhkGVjEeuJJ5E94TCkHw" name="getModSpec"/>
+    <ownedAttribute xmi:id="_HwtkIGVjEeuJJ5E94TCkHw" name="getWorldPath"/>
+    <ownedAttribute xmi:id="_H0IrkGVjEeuJJ5E94TCkHw" name="getModStoragePath"/>
+    <ownedOperation xmi:id="_NwDQYGVjEeuJJ5E94TCkHw" name="allocateUnknownNodeId">
+      <ownedParameter xmi:id="_iBphUGVjEeuJJ5E94TCkHw" name="const std::string &amp;name"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_OInhYGVjEeuJJ5E94TCkHw" name="joinModChannel">
+      <ownedParameter xmi:id="_m-RMUGVjEeuJJ5E94TCkHw" name="const std::string &amp;channel"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_a6twUGViEeuJJ5E94TCkHw" memberEnd="_a6twUWViEeuJJ5E94TCkHw _a6twVGViEeuJJ5E94TCkHw" navigableOwnedEnd="_a6twUWViEeuJJ5E94TCkHw _a6twVGViEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_a6twUWViEeuJJ5E94TCkHw" name="craftdefs" type="_uj4kwGVhEeuJJ5E94TCkHw" association="_a6twUGViEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a6twUmViEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a6twU2ViEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_a6twVGViEeuJJ5E94TCkHw" name="gamedefs" type="_YYrRYGViEeuJJ5E94TCkHw" association="_a6twUGViEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a6twVWViEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a6twVmViEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6_AWwGVjEeuJJ5E94TCkHw" name="chat" visibility="public">
+    <ownedAttribute xmi:id="_9QOygGVjEeuJJ5E94TCkHw" name="reformat"/>
+    <ownedAttribute xmi:id="_9RwcgGVjEeuJJ5E94TCkHw" name="clearRecentChat"/>
+    <ownedAttribute xmi:id="_E2YEgGVkEeuJJ5E94TCkHw" name="step"/>
+    <ownedOperation xmi:id="_HxGwQGVkEeuJJ5E94TCkHw" name="ChatFormattedLine">
+      <ownedParameter xmi:id="_NriuYGVkEeuJJ5E94TCkHw" name="ChatFormattedLine m_empty_formatted_line"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_VRrZUGVkEeuJJ5E94TCkHw" name="ChatBuffer m_console_buffer"/>
+    <ownedOperation xmi:id="_gUOgwGVkEeuJJ5E94TCkHw" name="ChatBuffer m_recent_buffer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_jDXnkGVkEeuJJ5E94TCkHw" memberEnd="_jDXnkWVkEeuJJ5E94TCkHw _jDXnlGVkEeuJJ5E94TCkHw" navigableOwnedEnd="_jDXnkWVkEeuJJ5E94TCkHw _jDXnlGVkEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_jDXnkWVkEeuJJ5E94TCkHw" name="settings" type="_JIeXYGVaEeuJJ5E94TCkHw" association="_jDXnkGVkEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jDXnkmVkEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jDXnk2VkEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_jDXnlGVkEeuJJ5E94TCkHw" name="chats" type="_6_AWwGVjEeuJJ5E94TCkHw" association="_jDXnkGVkEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jDXnlWVkEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jDXnlmVkEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_PCPmIGVlEeuJJ5E94TCkHw" name="client tile" visibility="public">
+    <ownedComment xmi:id="_gFBKoGVlEeuJJ5E94TCkHw" annotatedElement="_PCPmIGVlEeuJJ5E94TCkHw">
+      <body>https://github.com/minetest/minetest/blob/master/src/client/tile.h</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_kO80cGVlEeuJJ5E94TCkHw" name="getTextureId"/>
+    <ownedAttribute xmi:id="_kT17gGVlEeuJJ5E94TCkHw" name="getTextureName"/>
+    <ownedAttribute xmi:id="_kWDiAGVlEeuJJ5E94TCkHw" name="getTexture"/>
+    <ownedOperation xmi:id="_nteJwGVlEeuJJ5E94TCkHw" name="getTextureId">
+      <ownedParameter xmi:id="_3cK3QGVlEeuJJ5E94TCkHw" name="const std::string &amp;name"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n6hHQGVlEeuJJ5E94TCkHw" name="isKnownSourceImage">
+      <ownedParameter xmi:id="_GKVU0GVmEeuJJ5E94TCkHw" name="const std::string &amp;name"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SSDxEGVlEeuJJ5E94TCkHw" memberEnd="_SSDxEWVlEeuJJ5E94TCkHw _SSDxFGVlEeuJJ5E94TCkHw" navigableOwnedEnd="_SSDxEWVlEeuJJ5E94TCkHw _SSDxFGVlEeuJJ5E94TCkHw">
+    <ownedEnd xmi:id="_SSDxEWVlEeuJJ5E94TCkHw" name="item defs" type="_sLLS4GVfEeuJJ5E94TCkHw" association="_SSDxEGVlEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SSDxEmVlEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SSDxE2VlEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_SSDxFGVlEeuJJ5E94TCkHw" name="clients" type="_PCPmIGVlEeuJJ5E94TCkHw" association="_SSDxEGVlEeuJJ5E94TCkHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SSDxFWVlEeuJJ5E94TCkHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SSDxFmVlEeuJJ5E94TCkHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
